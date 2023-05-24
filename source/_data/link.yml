@@ -1,0 +1,23 @@
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+   - name: Hexo
+     link: https://hexo.io/zh-tw/
+     avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+     descr: 快速、简单且强大的网誌框架
+
+- class_name: 网站
+  class_desc: 没问题，就是学习
+  link_list:
+   - name: jquery之家
+     link: http://www.htmleaf.com/
+     avatar: https://cdn.jsdelivr.net/gh/yjr-1100/Photobag/githubioimg/jqueryhome.jpg
+  descr: 自由分享jQuery、html5和css3的插件库
+   - name: jquery插件库
+     link: https://www.jq22.com/
+     avatar: https://www.jq22.com/img/logo.png
+     descr: jquery插件库
+   - name: AcWing
+     link: https://www.acwing.com/
+     avatar: https://cdn.acwing.com/media/activity/surface/logo100x100.png
+     descr: 算法刷题
