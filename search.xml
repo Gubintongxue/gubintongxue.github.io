@@ -4,9 +4,22 @@
   
     
     <entry>
+      <title>primer 5th 阅读笔记</title>
+      <link href="/2023/06/05/primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+      <url>/2023/06/05/primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一章-开始"><a href="#第一章-开始" class="headerlink" title="第一章 开始"></a>第一章 开始</h1><h2 id="编译与运行"><a href="#编译与运行" class="headerlink" title="编译与运行"></a>编译与运行</h2><p><img src="/image/image-20221011191053151.png" alt="image-20221011191053151"></p><p>上图是一个 C 程序（C++ 程序类似）的编译过程，可供参考。</p><p>**g++**：</p><ul><li>编译：<code>g++ --std=c++11 ch01.cpp -o main</code></li><li>运行：<code>./prog1</code></li><li>查看运行状态：<code>echo $?</code></li><li>编译多个文件:<code>g++ ch2.cpp Sales_item.cc -o main</code></li></ul><p>输入 <code>g++ --help</code>，可查看编译器选项</p><h2 id="标准输入输出对象"><a href="#标准输入输出对象" class="headerlink" title="标准输入输出对象"></a>标准输入输出对象</h2><p>标准库定义类4个 IO 对象。输入， 使用一个名为 <code>cin</code> 的 <code>istream</code>  类型的对象。 输出，使用一个名为 <code>cout</code> 的 <code>ostream</code> 类型的对象。标准库还定义了其他两个 <code>ostream</code> 对象，名为 <code>cerr</code> 和 <code>clog</code> 。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Enter two numbers:&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="type">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;</span><br><span class="line">    std::cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;The sum of &quot;</span> &lt;&lt; v1 &lt;&lt; <span class="string">&quot; and &quot;</span> &lt;&lt; v2</span><br><span class="line">              &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; v1 + v2 &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一篇文章</title>
-      <link href="/2023/05/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/05/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <link href="/2022/09/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2022/09/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
         <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2>]]></content>
       
