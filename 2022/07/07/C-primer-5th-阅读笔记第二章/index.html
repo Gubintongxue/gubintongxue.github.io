@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C-primer-5th-阅读笔记第二章 | 平凡之路</title><meta name="author" content="pisces"><meta name="copyright" content="pisces"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="第二章 变量和基本类型任何常用的编程语言都具备一组公共的语法特征，最基本的特征包括：  整型、字符型等内置类型 变量，用来为对象命名 表达式和语句，用于操作上述数据类型的具体值 if 或 while 等控制结构，有选择地执行一些语句或重复地执行一些语句函数，用于定义可供随时调用的计算单元  大多数编程语言通过两种方式来进一步补充其基本特征：  自定义数据类型，实现对语言的扩展 将一些有用的功能封装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C-primer-5th-阅读笔记第二章">
+<meta property="og:url" content="https://gubintongxue.github.io/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:site_name" content="平凡之路">
+<meta property="og:description" content="第二章 变量和基本类型任何常用的编程语言都具备一组公共的语法特征，最基本的特征包括：  整型、字符型等内置类型 变量，用来为对象命名 表达式和语句，用于操作上述数据类型的具体值 if 或 while 等控制结构，有选择地执行一些语句或重复地执行一些语句函数，用于定义可供随时调用的计算单元  大多数编程语言通过两种方式来进一步补充其基本特征：  自定义数据类型，实现对语言的扩展 将一些有用的功能封装">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gubintongxue.github.io/img/default_cover_1.jpg">
+<meta property="article:published_time" content="2022-07-07T13:06:30.000Z">
+<meta property="article:modified_time" content="2023-06-05T13:07:44.342Z">
+<meta property="article:author" content="pisces">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gubintongxue.github.io/img/default_cover_1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gubintongxue.github.io/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C-primer-5th-阅读笔记第二章',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-05 21:07:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/touxiang_3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_cover_1.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="平凡之路"><span class="site-name">平凡之路</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C-primer-5th-阅读笔记第二章</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-07T13:06:30.000Z" title="发表于 2022-07-07 21:06:30">2022-07-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-05T13:07:44.342Z" title="更新于 2023-06-05 21:07:44">2023-06-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C-primer-5th-阅读笔记第二章"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二章-变量和基本类型"><a href="#第二章-变量和基本类型" class="headerlink" title="第二章 变量和基本类型"></a>第二章 变量和基本类型</h1><p>任何常用的编程语言都具备一组公共的语法特征，最基本的特征包括：</p>
+<ul>
+<li>整型、字符型等内置类型</li>
+<li>变量，用来为对象命名</li>
+<li>表达式和语句，用于操作上述数据类型的具体值</li>
+<li>if 或 while 等控制结构，有选择地执行一些语句或重复地执行一些语句函数，用于定义可供随时调用的计算单元</li>
+</ul>
+<p>大多数编程语言通过两种方式来进一步补充其基本特征：</p>
+<ul>
+<li>自定义数据类型，实现对语言的扩展</li>
+<li>将一些有用的功能封装成库函数</li>
+</ul>
+<h2 id="基本内置类型"><a href="#基本内置类型" class="headerlink" title="基本内置类型"></a>基本内置类型</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20221011191651582.png" alt="image-20221011191651582"></p>
+<blockquote>
+<p> 数据类型long long 是在C++11中新定义的。</p>
+</blockquote>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li>非布尔型赋给布尔型，初始值为0则结果为false，否则为true。</li>
+<li>布尔型赋给非布尔型，初始值为false结果为0，初始值为true结果为1。</li>
+</ul>
+<p>当在程序中使用一种类型而其实对象应该取另一种类型时，程序会自动进行类型转换。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> b = <span class="number">42</span>;		<span class="comment">// b 为真</span></span><br><span class="line"><span class="type">int</span> i = b;			<span class="comment">// i 的值为3</span></span><br><span class="line">i = <span class="number">3.14</span>;			<span class="comment">// i 的值为3</span></span><br><span class="line"><span class="type">double</span> pi = i;		<span class="comment">// pi 的值为 3.0</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> c = <span class="number">-1</span>; 	<span class="comment">// 假设 char 占8bit， c 的值为255</span></span><br><span class="line"><span class="type">signed</span> <span class="type">char</span> c2 = <span class="number">256</span>;	<span class="comment">// 假设 char 占8bit, c2 的值是未定义的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字面值常量"><a href="#字面值常量" class="headerlink" title="字面值常量"></a>字面值常量</h2><ul>
+<li><p>一个形如<code>42</code>的值被称作<strong>字面值常量</strong>（literal）。</p>
+<ul>
+<li><p>整型和浮点型字面值。</p>
+</li>
+<li><p>字符和字符串字面值。</p>
+<ul>
+<li><p>使用空格连接，继承自C。</p>
+</li>
+<li><p>字符字面值：单引号， <code>&#39;a&#39;</code></p>
+</li>
+<li><p>字符串字面值：双引号， <code>&quot;Hello World&quot;</code></p>
+</li>
+<li><p>分多行书写字符串。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std:cout&lt;&lt;<span class="string">&quot;wow, a really, really long string&quot;</span></span><br><span class="line">          <span class="string">&quot;literal that spans two lines&quot;</span> &lt;&lt;std::endl;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>转义序列。<code>\n</code>、<code>\t</code>等。</p>
+</li>
+<li><p>布尔字面值。<code>true</code>，<code>false</code>。</p>
+</li>
+<li><p>指针字面值。<code>nullptr</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>字符串型实际上时常量字符构成的数组，结尾处以<code>&#39;\0&#39;</code>结束，所以字符串类型实际上长度比内容多1。</p>
+</blockquote>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>变量</strong>提供一个<strong>具名</strong>的、可供程序操作的存储空间。   <code>C++</code>中<strong>变量</strong>和<strong>对象</strong>一般可以互换使用。</p>
+<h3 id="变量定义（define）"><a href="#变量定义（define）" class="headerlink" title="变量定义（define）"></a>变量定义（define）</h3><ul>
+<li><strong>定义形式</strong>：类型说明符（type specifier） + 一个或多个变量名组成的列表。如<code>int sum = 0, value, units_sold = 0;</code></li>
+<li><strong>初始化</strong>（initialize）：对象在创建时获得了一个特定的值。<ul>
+<li><strong>初始化不是赋值！</strong>：</li>
+<li>初始化 &#x3D; 创建变量 + 赋予初始值</li>
+<li>赋值 &#x3D; 擦除对象的当前值 + 用新值代替</li>
+<li><strong>列表初始化</strong>：使用花括号<code>&#123;&#125;</code>，如<code>int units_sold&#123;0&#125;;</code></li>
+<li>默认初始化：定义时没有指定初始值会被默认初始化；<strong>在函数体内部的内置类型变量将不会被初始化</strong>。</li>
+<li>建议初始化每一个内置类型的变量。</li>
+</ul>
+</li>
+</ul>
+<h3 id="变量的声明（declaration）-vs-定义（define）"><a href="#变量的声明（declaration）-vs-定义（define）" class="headerlink" title="变量的声明（declaration） vs 定义（define）"></a>变量的<strong>声明</strong>（declaration） vs <strong>定义</strong>（define）</h3><ul>
+<li><p>为了支持分离式编译，<code>C++</code>将声明和定义区分开。<strong>声明</strong>使得名字为程序所知。<strong>定义</strong>负责创建与名字关联的实体。</p>
+</li>
+<li><p><strong>extern</strong>：只是说明变量定义在其他地方。</p>
+</li>
+<li><p>只声明而不定义： 在变量名前添加关键字 <code>extern</code>，如<code>extern int i;</code>。但如果包含了初始值，就变成了定义：<code>extern double pi = 3.14;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">int</span> i;           <span class="comment">// 声明i而非定义i</span></span><br><span class="line"><span class="type">int</span> j;                  <span class="comment">// 声明并定义j</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">double</span> pi = <span class="number">3.14</span> <span class="comment">// 定义</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>变量只能被定义一次，但是可以多次声明。定义只出现在一个文件中，其他文件使用该变量时需要对其声明。</p>
+</li>
+</ul>
+<h3 id="名字的作用域"><a href="#名字的作用域" class="headerlink" title="名字的作用域"></a>名字的作用域</h3><ul>
+<li>第一次使用变量时再定义它。</li>
+<li>但是用到全局变量时，尽量不适用重名的局部变量。</li>
+</ul>
+<h2 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h2><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
+<p>一般说的引用是指的左值引用 </p>
+</blockquote>
+<p><strong>引用</strong> 就是为变量（对象）起一个别名</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> val = <span class="number">1024</span>;</span><br><span class="line"><span class="type">int</span> val1 = <span class="number">102</span>;</span><br><span class="line"><span class="type">int</span>&amp; refVal = val;		<span class="comment">//refVal指向val</span></span><br><span class="line">refVal = val1;			<span class="comment">//refVal引用并没有改变，只是改变了refVal指向的变量val的值，val = val1</span></span><br><span class="line"><span class="type">int</span> &amp;refVal2;			<span class="comment">//错误，引用必须初始化</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引用必须初始化。</li>
+<li>引用和它的初始值是<strong>绑定bind</strong>在一起的，而<strong>不是拷贝</strong>。一旦定义就不能更改绑定为其他的对象</li>
+<li><code>&amp;</code> 符号可以紧靠基本类型(<code>int</code>), 也可以紧靠变量名</li>
+</ul>
+<p><strong>以上说的引用都是左值引用，C++11还有右值引用</strong></p>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p><strong>指针</strong> 是 “指向” 另外一种类型的复合类型。指针和引用的不同，指针本身是一个对象，允许对指针赋值和拷贝；指针无须在定义时赋初值。</p>
+<p>指针的定义，将声明符写成 <code>*d</code> 的形式，其中 <code>d</code> 是变量名，如果一条语句种定义类几个指针变量，每个变量前面都必须有符号 <code>*</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *p1, *p2;	<span class="comment">// ip1和ip2都是指向int型对象的指针</span></span><br><span class="line"><span class="type">double</span> dp, *dp2;	<span class="comment">//dp2实质性double型对象的指针，dp是double型对象</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="指针值"><a href="#指针值" class="headerlink" title="指针值"></a>指针值</h4><p>指针的值应属下列4种状态之一：</p>
+<ul>
+<li>1.指向一个对象；</li>
+<li>2.指向紧邻对象的下一个位置；</li>
+<li>3.空指针, 意味着指针没有指向任何对象</li>
+<li>4.无效指针, 也就是上述情况之外的其他值</li>
+</ul>
+<h4 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h4><p>空指针不指向任何对象，在操作指针之前必须确定为一个非空指针。下列几个生成空指针的方法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *p1 = <span class="literal">nullptr</span>;		<span class="comment">// 等价于 int *p1 = 0;</span></span><br><span class="line"><span class="type">int</span> *p2 = <span class="number">0</span>;			<span class="comment">// 直接将 p2初始化为字面常量0</span></span><br><span class="line"><span class="comment">// 需要首先 #include &lt;cstdlib&gt;</span></span><br><span class="line"><span class="type">int</span> *p3 = <span class="literal">NULL</span>;			<span class="comment">// 等价于 int *p3 = 0;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**建议：初始化所有指针。**</span><br><span class="line"></span><br><span class="line">#### 定义多个变量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>int *p1, p2;   &#x2F;&#x2F; p1是指向int的指针, *是对p1的修饰, p2是int</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 指向指针的引用</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line">int i = 42;</span><br><span class="line">int *p;			// p是int型的指针</span><br><span class="line">int *&amp;r = p;	// r是一个对指针p的引用</span><br><span class="line">				// &amp;离r最近, 因此r是一个引用, 声明符的其余部分用以确定r引用的类型是什么, int *说明r引用的是一个int指针</span><br><span class="line"></span><br><span class="line">r = &amp;i;			// r是一个指针引用，因此给r赋值&amp;i就是令p指向i</span><br><span class="line">*r = 0;			// 解引用r,就是解引用指针p,将p指向的变量i的值改为0</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>面对一条比较复杂的指针或引用的声明语句时，从右向左读有助于弄清楚它的真实含义。</p>
+</blockquote>
+<h2 id="const限定符"><a href="#const限定符" class="headerlink" title="const限定符"></a>const限定符</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://gubintongxue.github.io">pisces</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://gubintongxue.github.io/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/">https://gubintongxue.github.io/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://gubintongxue.github.io" target="_blank">平凡之路</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/default_cover_1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/10/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="C-primer-5th-阅读笔记第三章"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover_5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C-primer-5th-阅读笔记第三章</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/05/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="C++primer-5th-阅读笔记第一章"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover_4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++primer-5th-阅读笔记第一章</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/touxiang_3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">pisces</div><div class="author-info__description">直到看到平凡才是唯一的答案</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gubintongxue"><i class="fab fa-github"></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/gubintongxue" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-text">第二章 变量和基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本内置类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="toc-text">字面值常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%EF%BC%88define%EF%BC%89"><span class="toc-text">变量定义（define）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E%EF%BC%88declaration%EF%BC%89-vs-%E5%AE%9A%E4%B9%89%EF%BC%88define%EF%BC%89"><span class="toc-text">变量的声明（declaration） vs 定义（define）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">名字的作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-text">复合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%80%BC"><span class="toc-text">指针值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="toc-text">空指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="toc-text">const限定符</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="C-primer-5th-阅读笔记第三章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover_5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C-primer-5th-阅读笔记第三章"/></a><div class="content"><a class="title" href="/2022/07/10/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="C-primer-5th-阅读笔记第三章">C-primer-5th-阅读笔记第三章</a><time datetime="2022-07-10T13:07:55.000Z" title="发表于 2022-07-10 21:07:55">2022-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="C-primer-5th-阅读笔记第二章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover_1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C-primer-5th-阅读笔记第二章"/></a><div class="content"><a class="title" href="/2022/07/07/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="C-primer-5th-阅读笔记第二章">C-primer-5th-阅读笔记第二章</a><time datetime="2022-07-07T13:06:30.000Z" title="发表于 2022-07-07 21:06:30">2022-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/05/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="C++primer-5th-阅读笔记第一章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover_4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++primer-5th-阅读笔记第一章"/></a><div class="content"><a class="title" href="/2022/07/05/C-primer-5th-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="C++primer-5th-阅读笔记第一章">C++primer-5th-阅读笔记第一章</a><time datetime="2022-07-05T04:37:47.000Z" title="发表于 2022-07-05 12:37:47">2022-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" title="第一篇文章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover_5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一篇文章"/></a><div class="content"><a class="title" href="/2022/05/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" title="第一篇文章">第一篇文章</a><time datetime="2022-05-25T06:54:15.000Z" title="发表于 2022-05-25 14:54:15">2022-05-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By pisces</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
